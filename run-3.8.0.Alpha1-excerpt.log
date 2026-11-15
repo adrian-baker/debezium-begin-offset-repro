@@ -1,0 +1,43 @@
+08:51:19.582 INFO  [Test worker] repro.BeginOffsetRestartTest - Transaction 747: r2 at 0/153FB88 (22281096); slot confirmed at 0/153FB88
+08:51:19.610 INFO  [pool-9-thread-1] i.d.c.p.c.PostgresConnection - Obtained valid replication slot ReplicationSlot [active=false, latestFlushedLsn=LSN{0/153FB88}, catalogXmin=745]
+08:51:19.629 INFO  [coordinator] i.d.c.p.PostgresStreamingChangeEventSource - Retrieved latest position from stored offset 'LSN{0/153FAD8}'
+08:51:19.629 INFO  [coordinator] i.d.c.p.c.WalPositionLocator - Looking for WAL restart position for last commit LSN 'LSN{0/153FAD8}' and last change LSN 'LSN{0/153FAD8}', events processed at LSN '0'
+08:51:19.637 INFO  [coordinator] i.d.c.p.c.PostgresConnection - Obtained valid replication slot ReplicationSlot [active=false, latestFlushedLsn=LSN{0/153FB88}, catalogXmin=745]
+08:51:19.637 INFO  [coordinator] i.d.c.p.c.PostgresReplicationConnection - Starting replication stream from LSN LSN{0/153FB88} with automaticFlush=true (mode=CONNECTOR_AND_DRIVER)
+08:51:19.650 INFO  [coordinator] i.d.c.p.PostgresStreamingChangeEventSource - Searching for WAL resume position
+08:51:19.664 TRACE [coordinator] i.d.c.p.c.p.PgOutputMessageDecoder - Final LSN of transaction: LSN{0/153FC08}
+08:51:19.664 TRACE [coordinator] i.d.c.p.c.WalPositionLocator - Processing LSN 'LSN{0/153FB08}', operation 'BEGIN' during WAL position search
+08:51:19.664 INFO  [coordinator] i.d.c.p.c.WalPositionLocator - First LSN 'LSN{0/153FB08}' received
+08:51:19.669 TRACE [coordinator] i.d.c.p.c.WalPositionLocator - Processing LSN 'LSN{0/153FB08}', operation 'INSERT' during WAL position search
+08:51:19.674 TRACE [coordinator] i.d.c.p.c.WalPositionLocator - Processing LSN 'LSN{0/153FB88}', operation 'INSERT' during WAL position search
+08:51:19.674 TRACE [coordinator] i.d.c.p.c.p.PgOutputMessageDecoder - Commit LSN: LSN{0/153FC08}
+08:51:19.674 TRACE [coordinator] i.d.c.p.c.WalPositionLocator - Processing LSN 'LSN{0/153FC38}', operation 'COMMIT' during WAL position search
+08:51:19.674 INFO  [coordinator] i.d.c.p.PostgresStreamingChangeEventSource - WAL resume position 'LSN{0/153FB08}' discovered
+08:51:19.680 INFO  [coordinator] i.d.c.p.c.PostgresReplicationConnection - Starting replication stream from LSN LSN{0/153FB88} with automaticFlush=true (mode=CONNECTOR_AND_DRIVER)
+08:51:19.696 TRACE [coordinator] i.d.c.p.c.p.PgOutputMessageDecoder - Final LSN of transaction: LSN{0/153FC08}
+08:51:19.717 INFO  [engine] repro.BeginOffsetRestartTest - Engine stopped: success=false, message=java.lang.IllegalStateException: Refusing r1 to stop the run
+08:51:19.717 INFO  [Test worker] repro.BeginOffsetRestartTest - Run 2 committed the BEGIN with offset {transaction_id=747, lsn_proc=22281096, messageType=BEGIN, lsn_commit=22280920, lsn=22280968, txId=747, ts_usec=1794513079562044}
+08:51:19.755 INFO  [pool-11-thread-1] i.d.c.p.c.PostgresConnection - Obtained valid replication slot ReplicationSlot [active=false, latestFlushedLsn=LSN{0/153FB88}, catalogXmin=745]
+08:51:19.776 INFO  [coordinator] i.d.c.p.PostgresStreamingChangeEventSource - Retrieved latest position from stored offset 'LSN{0/153FB88}'
+08:51:19.779 INFO  [coordinator] i.d.c.p.c.WalPositionLocator - Looking for WAL restart position for last commit LSN 'LSN{0/153FAD8}' and last change LSN 'LSN{0/153FB88}', events processed at LSN '0'
+08:51:19.787 INFO  [coordinator] i.d.c.p.c.PostgresConnection - Obtained valid replication slot ReplicationSlot [active=false, latestFlushedLsn=LSN{0/153FB88}, catalogXmin=745]
+08:51:19.791 INFO  [coordinator] i.d.c.p.c.PostgresReplicationConnection - Starting replication stream from LSN LSN{0/153FB88} with automaticFlush=true (mode=CONNECTOR_AND_DRIVER)
+08:51:19.803 INFO  [coordinator] i.d.c.p.PostgresStreamingChangeEventSource - Searching for WAL resume position
+08:51:19.803 TRACE [coordinator] i.d.c.p.c.p.PgOutputMessageDecoder - Final LSN of transaction: LSN{0/153FC08}
+08:51:19.804 TRACE [coordinator] i.d.c.p.c.WalPositionLocator - Processing LSN 'LSN{0/153FB08}', operation 'BEGIN' during WAL position search
+08:51:19.804 INFO  [coordinator] i.d.c.p.c.WalPositionLocator - First LSN 'LSN{0/153FB08}' received
+08:51:19.808 TRACE [coordinator] i.d.c.p.c.WalPositionLocator - Processing LSN 'LSN{0/153FB08}', operation 'INSERT' during WAL position search
+08:51:19.808 TRACE [coordinator] i.d.c.p.c.WalPositionLocator - Processing LSN 'LSN{0/153FB88}', operation 'INSERT' during WAL position search
+08:51:19.808 TRACE [coordinator] i.d.c.p.c.p.PgOutputMessageDecoder - Commit LSN: LSN{0/153FC08}
+08:51:19.808 TRACE [coordinator] i.d.c.p.c.WalPositionLocator - Processing LSN 'LSN{0/153FC38}', operation 'COMMIT' during WAL position search
+08:51:19.808 INFO  [coordinator] i.d.c.p.c.WalPositionLocator - LSN after last stored change LSN 'LSN{0/153FC38}' received
+08:51:19.808 INFO  [coordinator] i.d.c.p.PostgresStreamingChangeEventSource - WAL resume position 'LSN{0/153FC38}' discovered
+08:51:19.815 INFO  [coordinator] i.d.c.p.c.PostgresReplicationConnection - Starting replication stream from LSN LSN{0/153FB88} with automaticFlush=true (mode=CONNECTOR_AND_DRIVER)
+08:51:19.828 DEBUG [coordinator] i.d.c.p.c.WalPositionLocator - Message with LSN 'LSN{0/153FB08}' filtered
+08:51:19.828 TRACE [coordinator] i.d.c.p.c.p.PgOutputMessageDecoder - Final LSN of transaction: LSN{0/153FC08}
+08:51:19.831 DEBUG [coordinator] i.d.c.p.c.WalPositionLocator - Message with LSN 'LSN{0/0}' filtered
+08:51:19.836 DEBUG [coordinator] i.d.c.p.c.WalPositionLocator - Message with LSN 'LSN{0/153FB08}' filtered
+08:51:19.836 DEBUG [coordinator] i.d.c.p.c.WalPositionLocator - Message with LSN 'LSN{0/153FB88}' filtered
+08:51:19.836 TRACE [coordinator] i.d.c.p.c.p.PgOutputMessageDecoder - Commit LSN: LSN{0/153FC08}
+08:51:20.349 INFO  [engine] repro.BeginOffsetRestartTest - Engine stopped: success=true, message=Connector 'io.debezium.connector.postgresql.PostgresConnector' completed normally.
+08:51:20.349 INFO  [Test worker] repro.BeginOffsetRestartTest - Run 3 delivered changes [], then END with event_count 0
